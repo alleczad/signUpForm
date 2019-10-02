@@ -1,0 +1,102 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+span.closeModal{
+    display:none;
+    position:absolute;
+    right:10vh;
+    top:5vh;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+button#SingUp {
+  @include button;
+  background-color: green;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  width: 10vw;
+}
+
+body {
+    background-color: rgba(179, 157, 157, 0.404);
+  form {
+    display: none;
+    animation: anim 2s;
+    width: 45%;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: 0px 0px 19px 2px rgba(0,0,0,1);
+    z-index:1;
+
+    h1 {
+      margin-left: $marigin-left;
+      font-size: 40px;
+      font-weight: bold;
+      font-weight: arial;
+      margin: $magin;
+    }
+    div.fill {
+      margin: $magin;
+      padding: 2vh 0;
+      border-bottom: 2px solid grey;
+    }
+    label[for="email"] {
+      margin: $magin;
+    }
+    input.email {
+      @include input;
+    }
+    label[for="password"] {
+      margin-left: $marigin-left;
+    }
+    input[type="password"] {
+      @include input;
+    }
+    .returnMsg{
+        font-size: 12px;
+        color:red;
+        text-align:left;
+        margin:$magin;
+        .hide{
+            display:none;
+        }
+    }
+
+    label[for="checkbox"] {
+      margin-left: $marigin-left;
+    }
+    div.terms {
+      @include input;
+      padding: 0;
+    }
+    .conteiner {
+      text-align: center;
+      margin-bottom: $margin-bottom;
+      button[type="reset"] {
+        @include button;
+      }
+      button[type="submit"] {
+        @include button;
+        background-color: green;
+      }
+    }
+  }
+}
+.animation {
+  animation: anim 1s;
+}
+@keyframes anim {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
